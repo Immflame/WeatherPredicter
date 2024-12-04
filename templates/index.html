@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Проверка погоды</title>
+</head>
+<body>
+    <h1>Проверка погодных условий для маршрута</h1>
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+    {% if weather_condition %}
+        <p>{{ weather_condition }}</p>
+    {% endif %}
+    <form method="POST">
+        <label for="start_lat">Широта начала:</label><br>
+        <input type="number" id="start_lat" name="start_lat" step="0.000001" required><br>
+        <label for="start_lon">Долгота начала:</label><br>
+        <input type="number" id="start_lon" name="start_lon" step="0.000001" required><br>
+
+        <label for="end_lat">Широта конца:</label><br>
+        <input type="number" id="end_lat" name="end_lat" step="0.000001" required><br>
+        <label for="end_lon">Долгота конца:</label><br>
+        <input type="number" id="end_lon" name="end_lon" step="0.000001" required><br><br>
+
+        <input type="submit" value="Проверить погоду">
+    </form>
+</body>
+</html>
